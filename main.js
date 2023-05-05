@@ -11,7 +11,7 @@ let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.j
 console.log("HI")
 const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code'); 
-//let token = localStorage.getItem('access_token')
+let token = null;//localStorage.getItem('access_token')
 console.log(token, code);
 //console.log(code);
 //
@@ -24,9 +24,6 @@ searchForm.onsubmit = (ev) => {
 };
 
 function displayTracks(results) {
-  if (!results) {
-    getAuthCode(C_ID, redirectUri)
-  }
   console.log("Got results:",results);
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
