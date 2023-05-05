@@ -5,9 +5,9 @@ const searchForm = document.getElementById("top-search");
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
 let codeVerifier = generateRandomString(128);
-let redirectUri =  "https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
+let redirectUri =  "jacobhataway.github.io/343-p3"//"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
 console.log("HI")
-console.log("HELLO", getAuthCode(C_ID, redirectUri))//.then(e =>getToken(C_ID, redirectUri, e))
+//console.log("HELLO", getAuthCode(C_ID, redirectUri))//.then(e =>getToken(C_ID, redirectUri, e))
 
 //
 
