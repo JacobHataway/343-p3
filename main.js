@@ -3,6 +3,7 @@
 const searchForm = document.getElementById("top-search");
 const searchBar = document.getElementById("search-bar");
 const searchResults = document.getElementById("search-results");
+const lyrics = document.getElementById("lyrics");
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
@@ -48,7 +49,7 @@ function selectTrack(song, artist) {
 }
 
 function showLyrics(l) {
-  console.log(l);
+  lyrics.innerText=l
 }
 
 // function to search for spotify results
