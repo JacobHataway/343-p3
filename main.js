@@ -34,6 +34,7 @@ searchForm.onsubmit = (ev) => {
 
 function displayTracks(results) {
   console.log("Got results:", results);
+  searchResults.innerHTML="";
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
     li.className = "result";
@@ -45,6 +46,7 @@ function displayTracks(results) {
 
 function selectTrack(song, artist) {
   console.log("Selected", song);
+  lyrics.innerText="loading...";
   fetch(`https://corsproxy.io/?https://lyrist.vercel.app/api/${song}/${artist}`).then(e => e.json()).then(data => showLyrics(data.lyrics));
 }
 
