@@ -35,15 +35,31 @@ function displayTracks(results) {
   console.log("Got results:", results);
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
-    li.className="result";
+    li.className = "result";
     li.innerHTML = `<img src="${e.album.images[2].url}" class="2thumb">${e.name}`;
-    li.onclick = function() {selectTrack(e.name)};
+    li.onclick = function () { selectTrack(e.name) };
     searchResults.appendChild(li);
   });
 }
 
 function selectTrack(name) {
   console.log("Selected", name);
+  const data = null;
+
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener('readystatechange', function () {
+    if (this.readyState === this.DONE) {
+      console.log(this.responseText);
+    }
+  });
+
+  xhr.open('GET', 'https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad');
+  xhr.setRequestHeader('X-RapidAPI-Key', 'SIGN-UP-FOR-KEY');
+  xhr.setRequestHeader('X-RapidAPI-Host', 'sridurgayadav-chart-lyrics-v1.p.rapidapi.com');
+
+  xhr.send(data).then(e => console.log("response:", e));
 }
 
 // function to search for spotify results
