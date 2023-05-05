@@ -37,7 +37,7 @@ function displayTracks(results) {
     let li = document.createElement("li");
     li.className="result";
     li.innerHTML = `<img src="${e.album.images[2].url}" class="2thumb">${e.name}`;
-    li.onclick = function() {selectTrack("this")};
+    li.onclick = function() {selectTrack(e.name)};
     searchResults.appendChild(li);
   });
 }
