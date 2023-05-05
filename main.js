@@ -49,7 +49,11 @@ function selectTrack(song, artist) {
 }
 
 function showLyrics(l) {
-  lyrics.innerText=l
+  if (l) {
+    lyrics.innerText=l;
+  } else {
+    lyrics.innerText="Lyrics Not Found";
+  }
 }
 
 // function to search for spotify results
