@@ -49,7 +49,7 @@ function displayTracks(results) {
 }
 
 function searchPage(n) {
-  searchSpotify(token, searchBar.value, (n-1)*5)
+  searchSpotify(token, searchBar.value, (n-1)*5).then(e => displayTracks(e));
 }
 
 function selectTrack(song, artist) {
