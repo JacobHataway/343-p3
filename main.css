@@ -50,6 +50,11 @@ main {
   width:35%;
 }
 
+.col {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 1000px) {
   .row {
     flex-direction: column;
