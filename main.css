@@ -37,12 +37,9 @@
   color:blue;
 }
 
-.col {
-  padding-inline: 10px;
-}
-
 .row {
   display: flex;
+  padding-inline: 10px;
 }
 
 main {
