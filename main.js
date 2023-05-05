@@ -29,6 +29,7 @@ searchForm.onsubmit = (ev) => {
 };
 
 function displayTracks(results) {
+  console.log("HERE", results)
   console.log(results.tracks.items)
 }
 
