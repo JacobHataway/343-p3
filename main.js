@@ -29,7 +29,7 @@ searchForm.onsubmit = (ev) => {
     }
   }
   console.log(searchForm.value);
-  searchSpotify(token, searchBar.value).then(e => displayTracks(e));
+  searchSpotify(token, searchBar.value, 0).then(e => displayTracks(e));
 };
 
 function displayTracks(results) {
@@ -48,6 +48,10 @@ function displayTracks(results) {
   });
 }
 
+function searchPage(n) {
+  searchSpotify(token, searchBar.value, (n-1)*5)
+}
+
 function selectTrack(song, artist) {
   console.log("Selected", song);
   lyrics.innerText="loading...";
@@ -63,8 +67,8 @@ function showLyrics(l) {
 }
 
 // function to search for spotify results
-function searchSpotify(accessToken, query) {
-  return fetch(`https://api.spotify.com/v1/search?q=${query}&type=album%2Cplaylist%2Cartist%2Ctrack&limit=5`, {
+function searchSpotify(accessToken, query, offset) {
+  return fetch(`https://api.spotify.com/v1/search?q=${query}&type=album%2Cplaylist%2Cartist%2Ctrack&limit=5&offset=${offset}`, {
     headers: {
       Authorization: 'Bearer ' + accessToken
     }

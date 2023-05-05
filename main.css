@@ -26,4 +26,5 @@
 
 #search-pages {
   display:flex;
+  gap:5px;
 }

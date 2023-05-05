@@ -15,14 +15,15 @@
 <body>
   <nav class="navbar navbar-expand-sm bg-body-tertiary">
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Project 3</a>
-        
-        <form class="d-flex" role="search" id="top-search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="search-bar">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Project 3</a>
+
+      <form class="d-flex" role="search" id="top-search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query"
+          id="search-bar">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
   </nav>
   <div class="row">
     <nav class="col-sm-2">
@@ -47,7 +48,9 @@
         and demo below.</p>
       <ul id="search-results">
       </ul>
-      <div id="search-pages"><a>1</a><a>2</a><a>3</a></div>
+      <div id="search-pages"><a class="pageLink" onclick="searchPage(1)">1</a><a class="pageLink"
+          onclick="searchPage(2)">2</a><a class="pageLink" onclick="searchPage(3)">3</a><a class="pageLink"
+          onclick="searchPage(4)">4</a><a class="pageLink" onclick="searchPage(5)">5</a></div>
       <h1>Lyrics:</h1>
       <p id="lyrics"></p>
     </main>
