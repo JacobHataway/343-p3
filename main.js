@@ -33,7 +33,7 @@ searchForm.onsubmit = (ev) => {
 
 function displayTracks(results) {
   console.log(results.tracks.items);
-  [...results.tracks.items].foreach(e => {
+  results.tracks.items.forEach(e => {
     let div = document.createElement("div");
     div.innerHTML=`${e.name}`;
     searchResults.append(div);
