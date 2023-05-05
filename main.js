@@ -22,7 +22,7 @@ console.log(token, code);
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
-  searchPages.style.visibility = "initial";
+  searchPages.style.display = "inline";
 
   if (!token) {
     if (!code) {
