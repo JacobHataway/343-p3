@@ -32,10 +32,11 @@ searchForm.onsubmit = (ev) => {
 };
 
 function displayTracks(results) {
-  results.tracks.items.foreach(e => {
+  console.log(results.tracks.items);
+  [...results.tracks.items].foreach(e => {
     let div = document.createElement("div");
-    div.innerHTML=`${e.name}`
-    searchResults.append()
+    div.innerHTML=`${e.name}`;
+    searchResults.append(div);
   });
 }
 
