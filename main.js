@@ -24,7 +24,7 @@ searchForm.onsubmit = (ev) => {
   if (code == null) {
     getAuthCode(C_ID, redirectUri)
   }
-  console.log("searched");//searchSpotify(searchForm.value));
+  console.log(searchSpotify(searchForm.value));
 };
 
 // send user to spotify to permit/deny our app access, success will result
