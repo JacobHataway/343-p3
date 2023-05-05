@@ -1,6 +1,7 @@
 
 
 const searchForm = document.getElementById("top-search");
+const searchBar = document.getElementById("search-bar");
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
@@ -25,7 +26,8 @@ searchForm.onsubmit = (ev) => {
       getToken(C_ID, redirectUri, code);
     }
   }
-  searchSpotify(token, searchForm.value).then(e=>displayTracks(e));
+  console.log(seachForm.value);
+  searchSpotify(token, searchBar.value).then(e=>displayTracks(e));
 };
 
 function displayTracks(results) {
