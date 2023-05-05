@@ -8,6 +8,7 @@ const pageLinks = document.querySelectorAll(".pageLink,.pageLink-active");
 const searchDiv = document.getElementById("search-pages")
 
 // CODE STUFF
+localStorage.removeItem("access_token")
 C_ID = "960e28854592469eb3cdcb3da5fae639"
 let codeVerifier = generateRandomString(128);
 let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
@@ -16,20 +17,20 @@ const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code');
 let token = localStorage.getItem('access_token')
 console.log(token, code);
-//console.log(code);
+
+if (!token) {
+  if (!code) {
+    getAuthCode(C_ID, redirectUri)
+  } else {
+    getToken(C_ID, redirectUri, code);
+  }
+}
 
 
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
   searchDiv.removeAttribute("hidden");
-  if (!token) {
-    if (!code) {
-      getAuthCode(C_ID, redirectUri)
-    } else {
-      getToken(C_ID, redirectUri, code);
-    }
-  }
   console.log(searchForm.value);
   searchSpotify(token, searchBar.value, 0).then(e => displayTracks(e));
 };
