@@ -36,3 +36,7 @@
 .pageLink {
   color:blue;
 }
+
+.col {
+  padding-inline: 10px;
+}
