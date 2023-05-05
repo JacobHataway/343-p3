@@ -1,0 +1,19 @@
+.result {
+  padding-bottom: 15px;
+  display:flex;
+}
+
+.thumb {
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.channelTitle {
+  align-self: center;
+}
+
+#navbarTogglerDemo01 {
+  display:flex;
+  justify-content: space-between;
+  margin-inline: 15px;
+}
