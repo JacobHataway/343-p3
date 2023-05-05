@@ -40,3 +40,15 @@
 .col {
   padding-inline: 10px;
 }
+
+.row {
+  display: flex;
+}
+
+main {
+  width:60%
+}
+
+.lyrics-div {
+  width:39%;
+}
