@@ -28,3 +28,11 @@
   display:flex;
   gap:5px;
 }
+
+.pageLink-active {
+  color:purple;
+}
+
+.pageLink {
+  color:blue;
+}

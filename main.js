@@ -4,6 +4,7 @@ const searchForm = document.getElementById("top-search");
 const searchBar = document.getElementById("search-bar");
 const searchResults = document.getElementById("search-results");
 const lyrics = document.getElementById("lyrics");
+const pageLinks = document.getElementsByClassName("pageLink");
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
@@ -50,6 +51,13 @@ function displayTracks(results) {
 
 function searchPage(n) {
   searchSpotify(token, searchBar.value, (n-1)*5).then(e => displayTracks(e));
+  [...pageLinks].forEach(e => {
+    if (e.innerText == n) {
+      e.className="pageLink-active";
+    } else {
+      e.className="pageLink";
+    }
+  })
 }
 
 function selectTrack(song, artist) {
