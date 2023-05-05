@@ -23,3 +23,7 @@
 #search-results {
   list-style-type: none;
 }
+
+#search-pages {
+  display:flex;
+}
