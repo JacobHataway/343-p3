@@ -39,7 +39,6 @@
 
 .row {
   display: flex;
-  flex-direction: row;
   padding-inline: 10px;
 }
 
