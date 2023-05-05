@@ -5,14 +5,18 @@ const searchForm = document.getElementById("top-search");
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
 let codeVerifier = generateRandomString(128);
-let redirectUri =  "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
+let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
 console.log("HI")
-getAuthCode(C_ID, redirectUri)//.then(e =>getToken(C_ID, redirectUri, e))
+let code = null; //.then(e =>getToken(C_ID, redirectUri, e))
+//console.log(code);
 
 //
 
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
+  if (code == null) {
+    code = getAuthCode(C_ID, redirectUri)
+  }
   console.log(searchSpotify(searchForm.value));
 };
 
