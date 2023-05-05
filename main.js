@@ -2,7 +2,7 @@
 
 const searchForm = document.getElementById("top-search");
 const searchBar = document.getElementById("search-bar");
-const results = document.getElementById("search-results");
+const searchResults = document.getElementById("search-results");
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
@@ -36,7 +36,7 @@ function displayTracks(results) {
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
     li.innerHTML=`${e.name}`;
-    results.appendChild(li);
+    searchResults.appendChild(li);
   });
 }
 
