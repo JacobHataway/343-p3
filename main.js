@@ -10,7 +10,7 @@ console.log("HI")
 const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code'); 
 let token = localStorage.getItem('access_token')
-console.log(token);
+console.log(token, code);
 //console.log(code);
 
 //
