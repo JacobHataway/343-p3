@@ -25,8 +25,30 @@ searchForm.onsubmit = (ev) => {
       getToken(C_ID, redirectUri, code);
     }
   }
-  console.log(searchSpotify(token, searchForm.value));
+  displayTracks(searchSpotify(token, searchForm.value));
 };
+
+function displayTracks(results) {
+  console.log(results.tracks.items)
+}
+
+// function to search for spotify results
+function searchSpotify(accessToken, query) {
+  return fetch(`https://api.spotify.com/v1/search?q=${query}&type=album%2Cplaylist%2Cartist%2Ctrack&limit=5`, {
+    headers: {
+      Authorization: 'Bearer ' + accessToken
+    }
+  }).then(r => r.json()).then(data => {
+    console.log(data)
+    return data;
+  })
+}
+
+
+
+
+
+////////////////////////////////// AUTHENTIFICATION /////////////////////////////////////////////////////
 
 // send user to spotify to permit/deny our app access, success will result
 // in an authorization code
@@ -102,18 +124,6 @@ function getToken(clientId, redirectUri, code) {
 // function to use the profile endpoint
 function getProfile(accessToken) {
   return fetch('https://api.spotify.com/v1/me', {
-    headers: {
-      Authorization: 'Bearer ' + accessToken
-    }
-  }).then(r => r.json()).then(data => {
-    console.log(data)
-    return data;
-  })
-}
-
-// function to search for spotify results
-function searchSpotify(accessToken, query) {
-  return fetch(`https://api.spotify.com/v1/search?q=${query}&type=album%2Cplaylist%2Cartist%2Ctrack`, {
     headers: {
       Authorization: 'Bearer ' + accessToken
     }
