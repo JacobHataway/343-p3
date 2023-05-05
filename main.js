@@ -52,7 +52,7 @@ function displayTracks(results) {
 function searchPage(n) {
   searchSpotify(token, searchBar.value, (n-1)*5).then(e => displayTracks(e));
   [...pageLinks].forEach(e => {
-    if (e.innerText == n) {
+    if (e.innerText == "" + n) {
       e.className="pageLink-active";
     } else {
       e.className="pageLink";
