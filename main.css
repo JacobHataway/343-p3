@@ -50,5 +50,11 @@ main {
 }
 
 .lyrics-div {
-  width:39%;
+  width:35%;
+}
+
+@media screen and (max-width: 1000px) {
+  .row {
+    flex-direction: column;
+  }
 }
