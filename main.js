@@ -5,6 +5,7 @@ const searchBar = document.getElementById("search-bar");
 const searchResults = document.getElementById("search-results");
 const lyrics = document.getElementById("lyrics");
 const pageLinks = document.querySelectorAll(".pageLink,.pageLink-active");
+const searchDiv = document.getElementsById("search-pages")
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
@@ -21,6 +22,7 @@ console.log(token, code);
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
+  searchDiv.removeAttribute("hidden");
   if (!token) {
     if (!code) {
       getAuthCode(C_ID, redirectUri)
