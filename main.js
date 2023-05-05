@@ -2,6 +2,7 @@
 
 const searchForm = document.getElementById("top-search");
 const searchBar = document.getElementById("search-bar");
+const results = document.getElementById("search-results");
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
@@ -31,8 +32,11 @@ searchForm.onsubmit = (ev) => {
 };
 
 function displayTracks(results) {
-  console.log("HERE", results)
-  console.log(results.tracks.items)
+  results.tracks.items.foreach(e => {
+    let div = document.createElement("div");
+    div.innerHTML=`${e.name}`
+    searchResults.append()
+  });
 }
 
 // function to search for spotify results
