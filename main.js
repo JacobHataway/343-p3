@@ -22,8 +22,6 @@ console.log(token, code);
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
-  searchPages.style.display = "inline";
-
   if (!token) {
     if (!code) {
       getAuthCode(C_ID, redirectUri)
