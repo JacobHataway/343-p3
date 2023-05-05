@@ -20,6 +20,7 @@ if (code) {
 
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
+  ev.preventDefault();
   if (code == null) {
     getAuthCode(C_ID, redirectUri)
   }
