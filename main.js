@@ -8,7 +8,7 @@ let codeVerifier = generateRandomString(128);
 let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
 console.log("HI")
 const urlParams = new URLSearchParams(window.location.search);
-let code = urlParams.get('code'); //.then(e =>getToken(C_ID, redirectUri, e))
+let code = urlParams.get('code'); 
 if (code) {
   console.log("HAS")
 } else {
@@ -21,10 +21,9 @@ if (code) {
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   if (code == null) {
-    code = getAuthCode(C_ID, redirectUri)
-    console.log(code)
+    getAuthCode(C_ID, redirectUri)
   }
-  console.log(searchSpotify(searchForm.value));
+  console.log("searched");//searchSpotify(searchForm.value));
 };
 
 // send user to spotify to permit/deny our app access, success will result
