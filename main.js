@@ -9,6 +9,7 @@ let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.j
 console.log("HI")
 const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code'); 
+let token = localStorage.getItem('access_token')
 if (code) {
   console.log("HAS")
 } else {
@@ -21,10 +22,10 @@ if (code) {
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
-  if (code == null) {
+  if (code == null && token == null) {
     getAuthCode(C_ID, redirectUri)
   }
-  console.log(searchSpotify(searchForm.value));
+  console.log(searchSpotify(token, searchForm.value));
 };
 
 // send user to spotify to permit/deny our app access, success will result
