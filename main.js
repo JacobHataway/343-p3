@@ -35,9 +35,13 @@ function displayTracks(results) {
   console.log(results.tracks.items);
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
-    li.innerHTML=`${e.name}`;
+    li.innerHTML=`<button onclick="selectTrack(${e.name})"><img src="${e.album.images[1]}">${e.name}</button>`;
     searchResults.appendChild(li);
   });
+}
+
+function selectTrack(name) {
+  console.log("Selected", name);
 }
 
 // function to search for spotify results
