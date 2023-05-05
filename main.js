@@ -34,9 +34,9 @@ searchForm.onsubmit = (ev) => {
 function displayTracks(results) {
   console.log(results.tracks.items);
   results.tracks.items.forEach(e => {
-    let div = document.createElement("div");
-    div.innerHTML=`${e.name}`;
-    results.append(div);
+    let li = document.createElement("li");
+    li.innerHTML=`${e.name}`;
+    results.appendChild(li);
   });
 }
 
