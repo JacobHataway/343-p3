@@ -5,7 +5,7 @@ const searchBar = document.getElementById("search-bar");
 const searchResults = document.getElementById("search-results");
 const lyrics = document.getElementById("lyrics");
 const pageLinks = document.querySelectorAll(".pageLink,.pageLink-active");
-const searchPages = document.getElementById("searchPages");
+const searchPages = document.getElementById("search-pages");
 
 // CODE STUFF
 C_ID = "960e28854592469eb3cdcb3da5fae639"
