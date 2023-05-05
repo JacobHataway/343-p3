@@ -8,7 +8,6 @@ const pageLinks = document.querySelectorAll(".pageLink,.pageLink-active");
 const searchDiv = document.getElementById("search-pages")
 
 // CODE STUFF
-localStorage.removeItem("access_token")
 C_ID = "960e28854592469eb3cdcb3da5fae639"
 let codeVerifier = generateRandomString(128);
 let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
