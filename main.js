@@ -33,7 +33,7 @@ searchForm.onsubmit = (ev) => {
 };
 
 function displayTracks(results) {
-  if (!results) {
+  if (results.error) {
     localStorage.removeItem("access_token")
     getAuthCode(C_ID, redirectUri)
   }
