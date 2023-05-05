@@ -25,7 +25,7 @@ searchForm.onsubmit = (ev) => {
       getToken(C_ID, redirectUri, code);
     }
   }
-  displayTracks(searchSpotify(token, searchForm.value));
+  searchSpotify(token, searchForm.value).then(e=>displayTracks(e));
 };
 
 function displayTracks(results) {
