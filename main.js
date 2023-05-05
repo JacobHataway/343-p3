@@ -44,7 +44,7 @@ function displayTracks(results) {
 
 function selectTrack(song, artist) {
   console.log("Selected", song);
-  fetch(`https://corsproxy.io/?https://lyrist.vercel.app/api/${song}/${artist}`).then(e => console.log(e));//e.json()).then(data => console.log(data));
+  fetch(`https://corsproxy.io/?https://lyrist.vercel.app/api/${song}/${artist}`).then(e => e.json()).then(data => console.log(data));
 }
 
 // function to search for spotify results
