@@ -10,25 +10,33 @@ let codeVerifier = generateRandomString(128);
 let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
 console.log("HI")
 const urlParams = new URLSearchParams(window.location.search);
-let code = urlParams.get('code'); 
+let code = urlParams.get('code');
 let token = null;//localStorage.getItem('access_token')
 console.log(token, code);
 //console.log(code);
-//
+
 
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
+
+  if (!token) {
+    if (!code) {
+      getAuthCode(C_ID, redirectUri)
+    } else {
+      getToken(C_ID, redirectUri, code);
+    }
+  }
   console.log(searchForm.value);
-  searchSpotify(token, searchBar.value).then(e=>displayTracks(e));
+  searchSpotify(token, searchBar.value).then(e => displayTracks(e));
 };
 
 function displayTracks(results) {
-  console.log("Got results:",results);
+  console.log("Got results:", results);
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
-    li.innerHTML=`<img src="${e.album.images[1].url}">${e.name}</button>`;
-    li.onclick=`selectTrack(${e.name})`
+    li.innerHTML = `<img src="${e.album.images[1].url}">${e.name}</button>`;
+    li.onclick = `selectTrack(${e.name})`
     searchResults.appendChild(li);
   });
 }
