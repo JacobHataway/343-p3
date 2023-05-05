@@ -7,6 +7,7 @@ C_ID = "960e28854592469eb3cdcb3da5fae639"
 let codeVerifier = generateRandomString(128);
 let redirectUri = "https://jacobhataway.github.io/343-p3/" //"https://w3stu.cs.jmu.edu/hatawajs/343s23/p3-bs-starter-main/"
 console.log("HI")
+const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code'); //.then(e =>getToken(C_ID, redirectUri, e))
 if (code) {
   console.log("HAS")
