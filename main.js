@@ -44,7 +44,7 @@ function displayTracks(results) {
 
 function selectTrack(song, artist) {
   console.log("Selected", song);
-  fetch(`https://lyrist.vercel.app/api/${song}/${artist}`).then(e => console.log(e));
+  fetch(`https://lyrist.vercel.app/api/${song}/${artist}`).then(e => response.json()).then(data => console.log(data));
 }
 
 // function to search for spotify results
