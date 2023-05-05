@@ -36,7 +36,7 @@ function displayTracks(results) {
   results.tracks.items.forEach(e => {
     let div = document.createElement("div");
     div.innerHTML=`${e.name}`;
-    searchResults.append(div);
+    results.append(div);
   });
 }
 
