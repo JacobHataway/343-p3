@@ -35,7 +35,8 @@ function displayTracks(results) {
   console.log(results.tracks.items);
   results.tracks.items.forEach(e => {
     let li = document.createElement("li");
-    li.innerHTML=`<button onclick="selectTrack(${e.name})"><img src="${e.album.images[1]}">${e.name}</button>`;
+    li.innerHTML=`<img src="${e.album.images[1]}">${e.name}</button>`;
+    li.onclick=`selectTrack(${e.name})`
     searchResults.appendChild(li);
   });
 }
