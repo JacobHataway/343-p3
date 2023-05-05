@@ -18,8 +18,12 @@ console.log(token, code);
 searchForm.onsubmit = (ev) => {
   console.log("submitted top-search with", ev);
   ev.preventDefault();
-  if (code == null && token == null) {
-    getAuthCode(C_ID, redirectUri)
+  if (!token) {
+    if (!code) {
+      getAuthCode(C_ID, redirectUri)
+    } else {
+      getToken(C_ID, redirectUri, code);
+    }
   }
   console.log(searchSpotify(token, searchForm.value));
 };
