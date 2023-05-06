@@ -15,6 +15,18 @@
     results that you can cycle through. selecting one of these results calls the lyrics API with the selected songs name
     and author.
   </p>
+  <h2>Requirements:</h2>
+  <ul>
+    <li>Deployed: this site is deployed on github pages.</li>
+    <li>Responsive: media queries are used to change the layout between having lyrics beside the search section and
+      having lyrics underneath the search section</li>
+    <li>2 APIs: as stated above, the spotify and lyrics API are used. As the lyrics API has no
+      Access-Control-Allow-Origin header, and every other lyric API was either payed or not secure, lyric responses are
+      sent through a cors proxy.</li>
+    <li>Search: search is used to search for tracks.</li>
+    <li>Results: results are displayed and interactive.</li>
+    <li>Filterable: After searching, page numbers appear that allow you to filter data based on offset.</li>
+  </ul>
 </body>
 
 </html>
