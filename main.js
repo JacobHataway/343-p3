@@ -34,8 +34,9 @@ searchForm.onsubmit = (ev) => {
 
 function displayTracks(results) {
   if (results.error) {
-    localStorage.removeItem("access_token")
-    getAuthCode(C_ID, redirectUri)
+    //localStorage.removeItem("access_token")
+    //getAuthCode(C_ID, redirectUri)
+    return;
   }
   console.log("Got results:", results);
   searchResults.innerHTML="";
