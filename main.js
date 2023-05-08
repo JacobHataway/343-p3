@@ -17,12 +17,10 @@ let code = urlParams.get('code');
 let token = localStorage.getItem('access_token')
 console.log(token, code);
 
-if (!token) {
-  if (!code) {
-    getAuthCode(C_ID, redirectUri)
-  } else {
-    getToken(C_ID, redirectUri, code);
-  }
+if (!code) {
+  getAuthCode(C_ID, redirectUri)
+} else {
+  getToken(C_ID, redirectUri, code);
 }
 
 
