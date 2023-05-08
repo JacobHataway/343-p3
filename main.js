@@ -20,7 +20,7 @@ console.log(token, code);
 if (!code) {
   getAuthCode(C_ID, redirectUri)
 } else {
-  getToken(C_ID, redirectUri, code);
+  token = getToken(C_ID, redirectUri, code);
 }
 
 
@@ -34,9 +34,7 @@ searchForm.onsubmit = (ev) => {
 
 function displayTracks(results) {
   if (results.error) {
-    //localStorage.removeItem("access_token")
-    //getAuthCode(C_ID, redirectUri)
-    return;
+    getAuthCode(C_ID, redirectUri)
   }
   console.log("Got results:", results);
   searchResults.innerHTML="";
